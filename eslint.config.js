@@ -18,6 +18,7 @@ export default defineConfig([
         ...globals.node,
         defineNuxtConfig: "readonly",
         useRuntimeConfig: "readonly",
+        definePageMeta: "readonly",
       },
     },
   },
