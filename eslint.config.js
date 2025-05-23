@@ -12,7 +12,14 @@ export default defineConfig([
   },
   {
     files: ["**/*.{js,mjs,cjs,ts,vue}"],
-    languageOptions: { globals: { ...globals.browser, ...globals.node } },
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        defineNuxtConfig: "readonly",
+        useRuntimeConfig: "readonly",
+      },
+    },
   },
   tseslint.configs.recommended,
   ...pluginVue.configs["flat/strongly-recommended"],

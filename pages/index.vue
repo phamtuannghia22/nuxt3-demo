@@ -1,5 +1,10 @@
-<script setup>
+<script setup lang="ts">
   import { onMounted, ref } from "vue";
+
+  const runtimeConfig = useRuntimeConfig();
+  if (import.meta.server) {
+    console.log('API secret:', runtimeConfig.apiSecret)
+  }
 
   // reactive state
   const count = ref(0);
@@ -11,7 +16,8 @@
 
   // lifecycle hooks
   onMounted(() => {
-    console.log(`The initial count is ${count.value}. acva`);
+    console.log(runtimeConfig.apiSecret);
+    console.log(runtimeConfig.public.baseUrl);
   });
 </script>
 
