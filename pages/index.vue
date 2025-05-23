@@ -16,10 +16,5 @@
 </script>
 
 <template>
-   <button
-      @click="increment()"
-      class="w-full"
-   >
-      Count is: {{ count }}
-   </button>
+   <button @click="increment()">Count is: {{ count }}</button>
 </template>
