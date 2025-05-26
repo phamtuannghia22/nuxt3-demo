@@ -1,11 +1,13 @@
 <script setup lang="ts">
   import { onMounted, ref } from "vue";
+  import { useStore } from "~/stores";
 
   const runtimeConfig = useRuntimeConfig();
-  if (import.meta.server) {
-    console.log('API secret:', runtimeConfig.apiSecret)
-  }
-
+  // if (import.meta.server) {
+  //   console.log('API secret:', runtimeConfig.apiSecret);
+  // }
+  const a = useStore();
+  console.log(a.isMobile);
   // reactive state
   const count = ref(0);
 

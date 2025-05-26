@@ -19,6 +19,8 @@ export default defineConfig([
         defineNuxtConfig: "readonly",
         useRuntimeConfig: "readonly",
         definePageMeta: "readonly",
+        defineNuxtPlugin: "readonly",
+        useNuxtApp: "readonly",
       },
     },
   },
