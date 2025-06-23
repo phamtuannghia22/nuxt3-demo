@@ -18,8 +18,10 @@
 
   // lifecycle hooks
   onMounted(() => {
+    console.log(navigator.userAgent);
     console.log(runtimeConfig.apiSecret);
     console.log(runtimeConfig.public.baseUrl);
+    console.log(runtimeConfig.public.apiAuthenUrl);
   });
 </script>
 

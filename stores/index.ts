@@ -1,15 +1,19 @@
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
-export const useStore = defineStore('storeId', {
+export const useStore = defineStore("storeId", {
   // arrow function recommended for full type inference
   state: () => {
     return {
-      isMobile: true
-    }
+      isMobile: true,
+      os: "",
+    };
   },
   actions: {
-    setMobile(value: boolean) {
-      this.isMobile = value
-    }
-  }
-})
+    setIsMobile(value: boolean) {
+      this.isMobile = value;
+    },
+    setOs(value: string) {
+      this.os = value;
+    },
+  },
+});

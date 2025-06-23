@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     // Keys within public are also exposed client-side
     public: {
       baseUrl: "",
+      apiAuthenUrl: "",
     },
   },
 });
