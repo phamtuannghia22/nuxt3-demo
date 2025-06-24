@@ -4,6 +4,7 @@ export default defineNuxtPlugin({
   name: "api",
   setup() {
     const config = useRuntimeConfig();
+    const { getCookie } = useCookieUniversal();
 
     const fqaApi = $fetch.create({
       baseURL: `${config.public.baseURL}/api/v1`,
@@ -34,10 +35,9 @@ export default defineNuxtPlugin({
         "Content-Type": "application/json",
       },
       onRequest({ options }) {
-        const { getCookie } = useCookieUniversal();
-        const fqa_auth = getCookie("fqa_auth");
-        if (fqa_auth) {
-          options.headers.set("Authorization", `Bearer ${fqa_auth}`);
+        const auth = getCookie("fqa_auth");
+        if (auth) {
+          options.headers.set("Authorization", `Bearer ${auth}`);
         }
       },
       onResponse({ response }) {
