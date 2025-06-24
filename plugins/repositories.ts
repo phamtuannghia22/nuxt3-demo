@@ -7,9 +7,10 @@ export default defineNuxtPlugin({
   setup(nuxtApp) {
     const store = useStore();
     const api = nuxtApp.$api as typeof $fetch;
+    const authFetch = nuxtApp.$authFetch as typeof $fetch;
     return {
       provide: {
-        repository: repository(api, store.$state),
+        repository: repository(api, authFetch, store.$state),
       },
     };
   },

@@ -8,6 +8,7 @@
   // }
   const a = useStore();
   console.log(a.isMobile);
+  console.log(a.os);
   // reactive state
   const count = ref(0);
 
