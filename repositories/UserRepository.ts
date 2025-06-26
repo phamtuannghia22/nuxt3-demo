@@ -1,3 +1,5 @@
+import type { AuthToken, FQAResponse } from "~/types/manual/fqaRes";
+
 const resource = "/social/auth";
 const generateParams = (params: object) => {
   const removedBlankValueParams = Object.fromEntries(
@@ -20,10 +22,10 @@ const getOSType = (os: string) => {
 };
 
 export default (api: typeof $fetch, store: StoreType) => ({
-  login: (payload: { is_first: boolean }) => {
+  login: (payload: { is_first: number }): Promise<FQAResponse<AuthToken>> => {
     const { is_first } = payload;
     return api(
-      `${resource}/login?${generateParams({
+      `auth/login?${generateParams({
         is_first,
         app_type: store.isMobile ? 3 : 1,
         os_type: getOSType(store.os),

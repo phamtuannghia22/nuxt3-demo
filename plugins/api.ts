@@ -1,5 +1,3 @@
-import { useCookieUniversal } from "~/composables/useCookieUniversal";
-
 export default defineNuxtPlugin({
   name: "api",
   setup() {
@@ -15,9 +13,7 @@ export default defineNuxtPlugin({
       onRequest({ options }) {
         console.log("Request:", options);
       },
-      onResponse({ response }) {
-        console.log("Response:", response);
-      },
+      onResponse({ response }) {},
       onRequestError({ error }) {
         console.error("Request error:", error);
       },
