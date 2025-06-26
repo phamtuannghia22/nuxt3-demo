@@ -16,8 +16,8 @@
         is_first: 0,
         source: 1,
       };
-      // const res = await $repository.user.login(payload);
-      const res = await $repository.user.userInfo();
+      const res = await $repository.user.login(payload);
+      // const res = await $repository.user.userInfo();
     } catch (e) {
       console.log(e);
     }
@@ -25,14 +25,18 @@
   const handleSubmit = async () => {
     login()
   };
-
+  
+  if (import.meta.server) {
+    await login();
+  }
+  
   // const { data, error } = await useAsyncData("login", async () => {
   //   const result = await login();
   //   setCookie('fqa', 'assjjjjj');
   //   console.log('căc');
   //   return null;
   // });
-
+  // login();
   onMounted(() => {
     console.log(state.userInfo.fid);
     // const error = createError({

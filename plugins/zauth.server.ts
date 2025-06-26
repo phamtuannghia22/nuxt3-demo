@@ -11,10 +11,10 @@ export default defineNuxtPlugin({
     const token: AuthToken = JSON.parse(JSON.stringify(auth || ""));
     if (token?.access_token) {
       try {
-        const res = await $repository.user.userInfo();
-        if (res.msg.status === "success" && res.msg.code === "2000") {
-          state.setUserInfo(res.data);
-        }
+        // const res = await $repository.user.userInfo();
+        // if (res.msg.status === "success" && res.msg.code === "2000") {
+        //   state.setUserInfo(res.data);
+        // }
       } catch (e) {
         console.error("user info server error:", e);
       }
