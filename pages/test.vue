@@ -1,17 +1,40 @@
 <script setup lang="ts">
   import { onMounted } from "vue";
-  import { useAsyncData } from "#app";
+  import { useStore } from "~/stores";
 
-  const { $api, $repository } = useNuxtApp();
-  const payload = {
-    utm_source: '',
-    utm_campaign: '',
-    utm_medium: '',
-    is_first: false,
+  const { $repository } = useNuxtApp();
+ 
+  const username = ref("nghiapt3");
+  const password = ref("@Dmin4123");
+  const state = useStore();
+  
+  const login = async () => {
+    try {
+      const payload = {
+        password: password.value,
+        username: username.value,
+        is_first: 0,
+        source: 1,
+      };
+      // const res = await $repository.user.login(payload);
+      const res = await $repository.user.userInfo();
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  const handleSubmit = async () => {
+    login()
+  };
 
-  }
-  const a = $repository.user.login(payload);
+  // const { data, error } = await useAsyncData("login", async () => {
+  //   const result = await login();
+  //   setCookie('fqa', 'assjjjjj');
+  //   console.log('căc');
+  //   return null;
+  // });
+
   onMounted(() => {
+    console.log(state.userInfo.fid);
     // const error = createError({
     //   statusCode: 500,
     //   statusMessage: 'Page Not Found'
@@ -30,7 +53,13 @@
 </script>
 
 <template>
-  <div>test</div>
+  <div>
+    <form @submit.prevent="handleSubmit()">
+      <input v-model="username" />
+      <input v-model="password" />
+      <button type="submit">send</button>
+    </form>
+  </div>
 </template>
 
 <style scoped></style>

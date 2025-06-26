@@ -1,6 +1,7 @@
-import type { AuthToken, FQAResponse } from "~/types/manual/fqaRes";
+import type { AuthToken, FQAResponse, UserInfo } from "~/types/manual/fqaRes";
 
-const resource = "/social/auth";
+const resourceProfile = "/social";
+
 const generateParams = (params: object) => {
   const removedBlankValueParams = Object.fromEntries(
     Object.entries(params).filter(([_, v]) => v != null),
@@ -21,10 +22,10 @@ const getOSType = (os: string) => {
   return 4;
 };
 
-export default (api: typeof $fetch, store: StoreType) => ({
+export default (fqaFetch: typeof $fetch, authFetch: typeof $fetch, store: StoreType) => ({
   login: (payload: { is_first: number }): Promise<FQAResponse<AuthToken>> => {
     const { is_first } = payload;
-    return api(
+    return authFetch(
       `auth/login?${generateParams({
         is_first,
         app_type: store.isMobile ? 3 : 1,
@@ -35,5 +36,10 @@ export default (api: typeof $fetch, store: StoreType) => ({
         body: payload,
       },
     );
+  },
+  userInfo: (): Promise<FQAResponse<UserInfo>> => {
+    return fqaFetch(`${resourceProfile}/user/info`, {
+      method: "GET",
+    });
   },
 });

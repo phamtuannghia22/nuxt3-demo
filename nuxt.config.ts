@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     public: {
       baseUrl: "",
       apiAuthenUrl: "",
+      apiUrl: "",
     },
   },
 });

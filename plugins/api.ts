@@ -1,17 +1,22 @@
+import type { AuthToken } from "~/types/manual/fqaRes";
+
 export default defineNuxtPlugin({
   name: "api",
   setup() {
     const config = useRuntimeConfig();
     const { getCookie } = useCookieUniversal();
 
-    const fqaApi = $fetch.create({
-      baseURL: `${config.public.baseURL}/api/v1`,
+    const fqaFetch = $fetch.create({
+      baseURL: `${config.public.apiUrl}/api/v1`,
       headers: {
-        Authorization: "Bearer token_cứng",
         "Content-Type": "application/json",
       },
       onRequest({ options }) {
-        console.log("Request:", options);
+        const auth = getCookie("fqa_auth");
+        const token: AuthToken = JSON.parse(JSON.stringify(auth || ""));
+        if (token?.access_token) {
+          options.headers.set("Authorization", `Bearer ${token.access_token}`);
+        }
       },
       onResponse({ response }) {},
       onRequestError({ error }) {
@@ -32,12 +37,13 @@ export default defineNuxtPlugin({
       },
       onRequest({ options }) {
         const auth = getCookie("fqa_auth");
-        if (auth) {
-          options.headers.set("Authorization", `Bearer ${auth}`);
+        const token: AuthToken = JSON.parse(`${auth}`);
+        if (token.access_token) {
+          options.headers.set("Authorization", `Bearer ${token.access_token}`);
         }
       },
       onResponse({ response }) {
-        console.log("Response:", response);
+        // console.log("Response:", response);
       },
       onRequestError({ error }) {
         // console.error("Request error:", error);
@@ -51,7 +57,7 @@ export default defineNuxtPlugin({
 
     return {
       provide: {
-        fqaApi: fqaApi,
+        fqaFetch: fqaFetch,
         authFetch: authFetch,
       },
     };

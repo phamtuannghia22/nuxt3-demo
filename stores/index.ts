@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import type  { UserInfo } from "~/types/manual/fqaRes";
 
 export const useStore = defineStore("storeId", {
   // arrow function recommended for full type inference
@@ -6,6 +7,7 @@ export const useStore = defineStore("storeId", {
     return {
       isMobile: true,
       os: "",
+      userInfo: {} as UserInfo,
     };
   },
   actions: {
@@ -14,6 +16,9 @@ export const useStore = defineStore("storeId", {
     },
     setOs(value: string) {
       this.os = value;
+    },
+    setUserInfo(value: UserInfo ) {
+      this.userInfo = value;
     },
   },
 });

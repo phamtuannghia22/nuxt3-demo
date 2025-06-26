@@ -6,11 +6,14 @@ export default defineNuxtPlugin({
   dependsOn: ["api"],
   setup(nuxtApp) {
     const store = useStore();
-    const api = nuxtApp.$api as typeof $fetch;
-    const authFetch = nuxtApp.$authFetch as typeof $fetch;
+    const { $fqaFetch, $authFetch } = nuxtApp;
     return {
       provide: {
-        repository: repository(api, authFetch, store.$state),
+        repository: repository(
+          $fqaFetch as typeof $fetch,
+          $authFetch as typeof $fetch,
+          store.$state,
+        ),
       },
     };
   },
