@@ -23,9 +23,9 @@
     login();
   };
 
-  if (import.meta.server) {
-    await login();
-  }
+  // if (import.meta.server) {
+  //   await login();
+  // }
 
   // const { data, error } = await useAsyncData("login", async () => {
   //   const result = await login();
@@ -35,7 +35,7 @@
   // });
   // login();
   onMounted(() => {
-    console.log(state.loggedIn);
+    console.log(state.userInfo.accountId);
     // const error = createError({
     //   statusCode: 500,
     //   statusMessage: 'Page Not Found'
