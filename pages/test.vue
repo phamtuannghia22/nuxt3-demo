@@ -2,12 +2,9 @@
   import { onMounted } from "vue";
   import { useStore } from "~/stores";
 
-  const { $repository } = useNuxtApp();
- 
   const username = ref("nghiapt3");
   const password = ref("@Dmin4123");
   const state = useStore();
-  
   const login = async () => {
     try {
       const payload = {
@@ -16,20 +13,20 @@
         is_first: 0,
         source: 1,
       };
-      const res = await $repository.user.login(payload);
+      const res = await useAuthRepository().login(payload);
       // const res = await $repository.user.userInfo();
     } catch (e) {
       console.log(e);
     }
   };
   const handleSubmit = async () => {
-    login()
+    login();
   };
-  
+
   if (import.meta.server) {
     await login();
   }
-  
+
   // const { data, error } = await useAsyncData("login", async () => {
   //   const result = await login();
   //   setCookie('fqa', 'assjjjjj');

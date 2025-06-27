@@ -15,4 +15,9 @@ export default defineNuxtConfig({
       apiUrl: "",
     },
   },
+  imports: {
+    dirs: [
+      "composables/repositories/**", // quét đệ quy mọi file
+    ],
+  },
 });
