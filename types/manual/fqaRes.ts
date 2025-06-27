@@ -2,7 +2,7 @@ export interface AuthToken {
   access_token: string;
   refresh_token: string;
   token_type: string;
-  is_first: number;
+  is_first: number | null;
 }
 
 export interface TransferInfo {

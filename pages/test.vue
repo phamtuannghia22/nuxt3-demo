@@ -14,11 +14,18 @@
         source: 1,
       };
       const res = await useAuthRepository().login(payload);
-      // const res = await $repository.user.userInfo();
     } catch (e) {
       console.log(e);
     }
   };
+  const info = async () => {
+    try {
+      const res = await useUserRepository().userInfo();
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  
   const handleSubmit = async () => {
     login();
   };
@@ -60,6 +67,7 @@
       <input v-model="password" />
       <button type="submit">send</button>
     </form>
+    <button @click="info">Info</button>
   </div>
 </template>
 
