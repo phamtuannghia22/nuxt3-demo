@@ -2,12 +2,12 @@ import { defineStore } from "pinia";
 import type  { UserInfo } from "~/types/manual/fqaRes";
 
 export const useStore = defineStore("storeId", {
-  // arrow function recommended for full type inference
   state: () => {
     return {
       isMobile: true,
       os: "",
       userInfo: {} as UserInfo,
+      loggedIn: false,
     };
   },
   actions: {
@@ -20,5 +20,8 @@ export const useStore = defineStore("storeId", {
     setUserInfo(value: UserInfo ) {
       this.userInfo = value;
     },
+    setLoggedIn(value: boolean) {
+      this.loggedIn = value;
+    }
   },
 });

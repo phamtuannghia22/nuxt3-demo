@@ -38,7 +38,7 @@
   // });
   // login();
   onMounted(() => {
-    console.log(state.userInfo.fid);
+    console.log(state.loggedIn);
     // const error = createError({
     //   statusCode: 500,
     //   statusMessage: 'Page Not Found'
