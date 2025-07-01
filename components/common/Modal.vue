@@ -7,7 +7,7 @@
 
 <template>
   <Teleport to="body">
-    <div v-if="show" class="fixed w-full h-full top-0 left-0 z-50 flex items-center justify-center bg-modalBackdrop">
+    <div v-if="show" class="fixed inset-0 z-50 flex items-center justify-center bg-modalBackdrop">
       <div class="bg-white rounded-lg p-6 w-full max-w-md shadow-xl">
         <slot />
         <div class="mt-4 text-right">
