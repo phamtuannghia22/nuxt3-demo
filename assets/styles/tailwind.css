@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@theme {
+    --color-orange: #FF884B;
+    --color-black: #2E2E2E;
+    --color-blackOriginal: #000000;
+    --color-white: #FFFFFF;
+    --color-orangeBland: #fff3ed;
+    --color-grayBland: #DEDEDE;
+    --color-redError: #FF2121;
+
+    --breakpoint-mobile-max: 767px;
+    --breakpoint-tablet-min: 768px;
+    --breakpoint-tablet-max: 1023px;
+    --breakpoint-laptop-min: 1024px;
+    --breakpoint-laptop-max: 1279px;
+    --breakpoint-desktop-min: 1280px;
+    --breakpoint-desktop-max: 1919px;
+    --breakpoint-wide-min: 1920px;
+}
