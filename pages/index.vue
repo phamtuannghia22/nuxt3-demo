@@ -11,6 +11,7 @@
   console.log(a.os);
   // reactive state
   const count = ref(0);
+  const open = ref(false);
 
   // functions that mutate state and trigger updates
   function increment() {
@@ -27,10 +28,18 @@
 </script>
 
 <template>
-  <button
-    @click="increment()"
-    class="w-full"
-  >
-    Count is: {{ count }}
-  </button>
+  <div>
+    <button
+      @click="open = true"
+      class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+    >
+      Mở Modal
+    </button>
+    <Modal
+      :show="open"
+      @close="open = false"
+    >
+      <p class="text-lg">Đây là nội dung của modal.</p>
+    </Modal>
+  </div>
 </template>

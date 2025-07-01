@@ -19,11 +19,14 @@ export default defineNuxtConfig({
   },
   imports: {
     dirs: [
-      "composables/repositories/**", // quét đệ quy mọi file
+      "composables/repositories/**",
     ],
   },
   css: ["~/assets/styles/tailwind.css"],
   vite: {
     plugins: [tailwindcss()],
   },
+  components: [
+    { path: '~/components/common/'}
+  ]
 });

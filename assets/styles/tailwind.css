@@ -8,6 +8,7 @@
     --color-orangeBland: #fff3ed;
     --color-grayBland: #DEDEDE;
     --color-redError: #FF2121;
+    --color-modalBackdrop: #00000080;
 
     --breakpoint-mobile-max: 767px;
     --breakpoint-tablet-min: 768px;
