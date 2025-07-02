@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { onMounted, ref } from "vue";
+  import { onMounted, useTemplateRef } from "vue";
   import { useStore } from "~/stores";
 
   const runtimeConfig = useRuntimeConfig();
@@ -7,19 +7,23 @@
   //   console.log('API secret:', runtimeConfig.apiSecret);
   // }
   const a = useStore();
-  console.log(a.isMobile);
-  console.log(a.os);
+  // console.log(a.isMobile);
+  // console.log(a.os);
   // reactive state
-  const count = ref(0);
-  const open = ref(false);
+  const test1 = useTemplateRef('test1');
+  const test2 = useTemplateRef('test2');
 
-  // functions that mutate state and trigger updates
-  function increment() {
-    count.value++;
+  function openPop()  {
+    test1.value?.openModal()
   }
-
+  
+  function openPop2()  {
+    test2.value?.openModal()
+  }
+  
   // lifecycle hooks
   onMounted(() => {
+    // console.log(input.value?.openModal());
     console.log(navigator.userAgent);
     console.log(runtimeConfig.apiSecret);
     console.log(runtimeConfig.public.baseUrl);
@@ -30,16 +34,27 @@
 <template>
   <div>
     <button
-      @click="open = true"
+      @click="openPop()"
       class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
     >
       Mở Modal
     </button>
     <Modal
-      :show="open"
-      @close="open = false"
+      ref="test1"
     >
       <p class="text-lg">Đây là nội dung của modal.</p>
+      <button
+        @click="openPop2()"
+        class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+      >
+        Mở Modal
+      </button>
+    </Modal>
+    <Modal
+      ref="test2"
+      :is-have-close-btn="true"
+    >
+      <p class="text-lg">Đây là nội dung của modal 2.</p>
     </Modal>
   </div>
 </template>

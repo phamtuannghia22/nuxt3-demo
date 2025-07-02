@@ -10,14 +10,9 @@
     --color-redError: #FF2121;
     --color-modalBackdrop: #00000080;
 
-    --breakpoint-mobile-max: 767px;
-    --breakpoint-tablet-min: 768px;
-    --breakpoint-tablet-max: 1023px;
-    --breakpoint-laptop-min: 1024px;
-    --breakpoint-laptop-max: 1279px;
-    --breakpoint-desktop-min: 1280px;
-    --breakpoint-desktop-max: 1919px;
-    --breakpoint-wide-min: 1920px;
+    --breakpoint-mobile: 767px;
+    --breakpoint-tablet: 1023px;
+    --breakpoint-laptop: 1279px;
 }
 
 @font-face {
