@@ -1,7 +1,8 @@
 <script setup lang="ts">
   import { onMounted, useTemplateRef } from "vue";
   import { useStore } from "~/stores";
-
+  import EmitterCom from "~/components/test/EmitterCom.vue";
+  
   const runtimeConfig = useRuntimeConfig();
   // if (import.meta.server) {
   //   console.log('API secret:', runtimeConfig.apiSecret);
@@ -24,16 +25,24 @@
   
   // lifecycle hooks
   onMounted(() => {
+    emitter.on('custom-event', (payload) => {
+      console.log(payload);
+    });
     // console.log(input.value?.openModal());
     console.log(navigator.userAgent);
     console.log(runtimeConfig.apiSecret);
     console.log(runtimeConfig.public.baseUrl);
     console.log(runtimeConfig.public.apiAuthenUrl);
   });
+
+  onUnmounted(() => {
+    emitter.off('custom-event');
+  });
 </script>
 
 <template>
   <div>
+    <EmitterCom></EmitterCom>
     <button
       @click="openPop()"
       class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
