@@ -12,9 +12,10 @@
   // reactive state
   const test1 = useTemplateRef('test1');
   const test2 = useTemplateRef('test2');
-
+  const { $toast } = useNuxtApp();
   function openPop()  {
-    test1.value?.openModal()
+    $toast.success('toastify success');
+    // test1.value?.openModal()
   }
   
   function openPop2()  {
