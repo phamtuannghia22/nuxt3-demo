@@ -46,6 +46,9 @@
 
 <template>
   <div>
+    <button v-tooltip="'Bấm vào tôi để bắt đầu'" class="p-2 bg-blue-500 text-white rounded">
+      Hover me
+    </button>
     <EmitterCom></EmitterCom>
     <button
       @click="openPop()"
