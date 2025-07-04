@@ -16,6 +16,7 @@ export default defineNuxtConfig({
       baseUrl: "",
       apiAuthenUrl: "",
       apiUrl: "",
+      qnaUrl: "",
     },
   },
   imports: {

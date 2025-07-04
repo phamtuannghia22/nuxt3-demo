@@ -8,6 +8,7 @@ export const useStore = defineStore("storeId", {
       os: "",
       userInfo: {} as UserInfo,
       loggedIn: false,
+      appConfig: {}
     };
   },
   actions: {
@@ -22,6 +23,9 @@ export const useStore = defineStore("storeId", {
     },
     setLoggedIn(value: boolean) {
       this.loggedIn = value;
+    },
+    setAppConfig() {
+      
     }
   },
 });
