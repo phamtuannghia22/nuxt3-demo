@@ -23,13 +23,13 @@
     test2.value?.openModal()
   }
   
-  const { $dayjs } = useNuxtApp(); 
+  const { $dayjs, $emitter } = useNuxtApp(); 
   
   // lifecycle hooks
   onMounted(() => {
     const time = $dayjs().subtract(2, 'day').format('YYYY-MM-DD');
     console.log(time);
-    emitter.on('custom-event', (payload) => {
+    $emitter.on('custom-event', (payload) => {
       console.log(payload);
     });
     // console.log(input.value?.openModal());
@@ -40,7 +40,7 @@
   });
 
   onUnmounted(() => {
-    emitter.off('custom-event');
+    $emitter.off('custom-event');
   });
 </script>
 

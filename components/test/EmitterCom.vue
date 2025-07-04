@@ -1,18 +1,16 @@
 <script setup lang="ts">
+  const { $emitter } = useNuxtApp();
+
   const emitEvent = () => {
-    emitter.emit('custom-event', { message: 'abc' });
+    $emitter.emit("custom-event", { message: "abc" });
   };
 </script>
 
 <template>
   <div>
-    Emitter
-    <button @click="emitEvent">
-      Emit
-    </button>
+    Emitterr
+    <button @click="emitEvent">Emit</button>
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
