@@ -1,4 +1,4 @@
-import type { AuthToken, FQAResponse, UserInfo } from "@types/fqaRes";
+import type { AuthToken, FQAResponse, UserInfo } from "@manual-types/fqaRes";
 import { useStore } from "~/stores";
 import type { NitroFetchOptions } from "nitropack";
 

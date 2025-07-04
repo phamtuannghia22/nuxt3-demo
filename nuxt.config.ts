@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from "@tailwindcss/vite";
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from "url";
 
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
@@ -28,13 +28,14 @@ export default defineNuxtConfig({
   components: [{ path: "~/components/common/" }],
   image: {
     screens: {
-      "mobile": 767,
-      "tablet": 1023,
-      "laptop": 1279,
+      mobile: 767,
+      tablet: 1023,
+      laptop: 1279,
     },
   },
   alias: {
-    '@images': fileURLToPath(new URL('./assets/images', import.meta.url)),
-    '@types': fileURLToPath(new URL('./shared/types/manual', import.meta.url)),
-  }
+    "@images": fileURLToPath(new URL("./assets/images", import.meta.url)),
+    "@types": fileURLToPath(new URL("./shared/types/manual", import.meta.url)),
+    "@manual-types": fileURLToPath(new URL("./shared/types/manual", import.meta.url)),
+  },
 });

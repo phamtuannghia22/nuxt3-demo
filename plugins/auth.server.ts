@@ -1,4 +1,4 @@
-import type { AuthToken } from "@types/fqaRes";
+import type { AuthToken } from "@manual-types/fqaRes";
 import { useStore } from "~/stores";
 import { useUserRepository } from "~/composables/repositories/useUserRepository";
 
