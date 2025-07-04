@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import type  { UserInfo } from "~/types/manual/fqaRes";
+import type  { UserInfo } from "@types/fqaRes";
 
 export const useStore = defineStore("storeId", {
   state: () => {

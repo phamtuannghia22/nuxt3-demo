@@ -5,7 +5,7 @@
     "types": [
       "nuxt",
       "vue",
-      "./types/auto"
+      "./shared/types/auto"
     ]
   }
 }

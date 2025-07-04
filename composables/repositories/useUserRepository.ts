@@ -1,4 +1,4 @@
-import type { FQAResponse, UserInfo } from "~/types/manual/fqaRes";
+import type { FQAResponse, UserInfo } from "@types/fqaRes";
 
 const resourceProfile = "/social";
 

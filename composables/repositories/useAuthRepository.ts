@@ -1,4 +1,4 @@
-import type { AuthToken, FQAResponse } from "~/types/manual/fqaRes";
+import type { AuthToken, FQAResponse } from "@types/fqaRes";
 import { useStore } from "~/stores";
 
 const generateParams = (params: object) => {
