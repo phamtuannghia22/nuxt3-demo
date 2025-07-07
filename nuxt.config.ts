@@ -1,10 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import tailwindcss from "@tailwindcss/vite";
 import { fileURLToPath } from "url";
 
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
-  modules: ["@nuxt/fonts", "@nuxt/image", "@nuxt/scripts", "@pinia/nuxt"],
+  modules: ["@nuxt/fonts", "@nuxt/image", "@nuxt/scripts", "@pinia/nuxt", "@unocss/nuxt"],
   $development: {
     devtools: { enabled: true },
   },
@@ -22,10 +21,7 @@ export default defineNuxtConfig({
   imports: {
     dirs: ["composables/repositories/**"],
   },
-  css: ["~/assets/styles/tailwind.css"],
-  vite: {
-    plugins: [tailwindcss()],
-  },
+  css: ["~/assets/styles/main.css"],
   components: [{ path: "~/components/common/" }],
   image: {
     screens: {

@@ -57,7 +57,7 @@
         <div
           v-if="showContent"
           @click.stop="() => true"
-          class="bg-white rounded-lg p-6 max-mobile:px-3 max-mobile:pb-3 max-mobile:pt-6 min-w-[360px] shadow-2xl relative"
+          class="bg-white rounded-lg p-6 phone:px-3 phone:pb-3 phone:pt-6 min-w-[360px] shadow-2xl relative"
           :class="`${classes}`"
         >
           <slot />

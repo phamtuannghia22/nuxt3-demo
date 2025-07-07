@@ -15,8 +15,8 @@
   const test2 = useTemplateRef('test2');
   const { $toast } = useNuxtApp();
   function openPop()  {
-    $toast.success('toastify success');
-    // test1.value?.openModal()
+    // $toast.success('toastify success');
+    test1.value?.openModal()
   }
   
   function openPop2()  {
@@ -58,6 +58,7 @@
     </button>
     <Modal
       ref="test1"
+      :is-have-close-btn="true"
     >
       <p class="text-lg">Đây là nội dung của modal.</p>
       <button
