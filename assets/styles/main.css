@@ -1,5 +1,9 @@
 @import '@unocss/reset/tailwind.css';
 
+:root {
+    --color-black: #2E2E2E;
+}
+
 @font-face {
     font-family: Poppins;
     src: url("/assets/fonts/poppins/medium.woff2") format("woff2");

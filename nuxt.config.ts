@@ -32,7 +32,6 @@ export default defineNuxtConfig({
   },
   alias: {
     "@images": fileURLToPath(new URL("./assets/images", import.meta.url)),
-    "@types": fileURLToPath(new URL("./shared/types/manual", import.meta.url)),
     "@manual-types": fileURLToPath(new URL("./shared/types/manual", import.meta.url)),
   },
 });
