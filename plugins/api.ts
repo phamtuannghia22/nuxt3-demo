@@ -100,10 +100,6 @@ export default defineNuxtPlugin({
         "Content-Type": "application/json",
       },
       onRequest({ options }) {
-        const token: AuthToken = JSON.parse(JSON.stringify(auth_cookie.value || ""));
-        if (token?.access_token) {
-          options.headers.set("Authorization", `Bearer ${token.access_token}`);
-        }
       },
       onResponse({ response }) {},
       onRequestError({ error }) {

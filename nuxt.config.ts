@@ -16,6 +16,9 @@ export default defineNuxtConfig({
       apiAuthenUrl: "",
       apiUrl: "",
       qnaUrl: "",
+      redisPort: "",
+      redisHost: "",
+      redisPass: ""
     },
   },
   imports: {

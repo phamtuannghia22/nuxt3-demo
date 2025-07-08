@@ -44,6 +44,7 @@ export default defineConfig([
       "no-console": "warn",
       "no-undef": "warn",
       "vue/singleline-html-element-content-newline": "off",
+      "@typescript-eslint/no-explicit-any": "off",
     },
   },
 ]);
