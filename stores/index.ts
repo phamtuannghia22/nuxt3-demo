@@ -26,12 +26,13 @@ export const useStore = defineStore("storeId", {
       this.loggedIn = value;
     },
     async setAppConfig() {
-      const { $qnaFetch, $redis } = useNuxtApp();
+      const { $qnaFetch} = useNuxtApp();
+      const redis :any  = useNuxtApp().$redis;
       try {
-        if ($redis.status === "ready") {
-          const pong = await $redis.ping();
+        if (redis?.status === "ready" && import.meta.server && !import.meta.dev) {
+          const pong = await redis?.ping();
           if (pong === "PONG") {
-            const cache: any = await $redis.get("layout");
+            const cache: any = await redis?.get("layout");
             const config: AppConfig = JSON.parse(cache)?.config;
             this.appConfig = config;
             return;

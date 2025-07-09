@@ -3,6 +3,14 @@ import Redis from "ioredis";
 export default defineNuxtPlugin({
   name: "redis",
   async setup() {
+    if (import.meta.dev) {
+      return {
+        provide: {
+          redis: {},
+        },
+      };
+    }
+    
     const config = useRuntimeConfig();
 
     if (!(globalThis as any).redisClient) {
