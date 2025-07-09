@@ -167,18 +167,18 @@
         </div>
       </div>
       <div
-        class="border border-[#393B41] my-4 mx-auto flex justify-between w-[1272px] screen-event-sm:w-[1172px] z-[200]"
+        class="border border-[#393B41] my-4 mx-auto flex justify-between w-[1272px] screen-event-sm:w-[1172px]"
       ></div>
-      <div class="mx-auto w-[1272px] screen-event-sm:w-[1172px] z-[200]">
+      <div class="mx-auto w-[1272px] screen-event-sm:w-[1172px]">
         <div class="text-white text-[14px] break-words whitespace-pre-wrap mb-[5px]">
           {{ uiLayout?.footer?.information }}
         </div>
         <div class="text-white text-[14px]">{{ uiLayout?.footer?.copyright }}</div>
       </div>
       <div
-        class="border border-[#393B41] my-4 mx-auto flex justify-between w-[1272px] screen-event-sm:w-[1172px] z-[200]"
+        class="border border-[#393B41] my-4 mx-auto flex justify-between w-[1272px] screen-event-sm:w-[1172px]"
       ></div>
-      <div class="mx-auto flex justify-between w-[1272px] screen-event-sm:w-[1172px] z-[200]">
+      <div class="mx-auto flex justify-between w-[1272px] screen-event-sm:w-[1172px]">
         <ul class="flex flex-wrap items-center">
           <li class="text-white text-sm font-semibold">Top từ khóa xu hướng:</li>
           <li
