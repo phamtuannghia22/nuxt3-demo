@@ -18,13 +18,14 @@ export default defineNuxtConfig({
       qnaUrl: "",
       redisPort: "",
       redisHost: "",
-      redisPass: ""
+      redisPass: "",
+      fqaUrlCdn: "",
     },
   },
   imports: {
     dirs: ["composables/repositories/**"],
   },
-  css: ["~/assets/styles/main.css"],
+  css: ["~/assets/styles/main.css", "~/assets/styles/common.scss"],
   components: [{ path: "~/components/common/" }],
   image: {
     screens: {
@@ -32,6 +33,13 @@ export default defineNuxtConfig({
       tablet: 1023,
       laptop: 1279,
     },
+    domains: [
+      "minio.dev.ftech.ai",
+      "play.google.com",
+      "apps.apple.com",
+      "minio.ftech.ai",
+      "static.fqa.vn",
+    ],
   },
   alias: {
     "@images": fileURLToPath(new URL("./assets/images", import.meta.url)),

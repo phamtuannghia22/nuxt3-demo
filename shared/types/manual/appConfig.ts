@@ -82,6 +82,13 @@ export interface BgHeader {
   bgRight: Media | null;
 }
 
+export interface BgFooter {
+  id: number;
+  bgColor: string;
+  bgTop: Media | null;
+  bgBottom: Media | null;
+}
+
 export interface Footer {
   id: number;
   description: string;
@@ -92,7 +99,7 @@ export interface Footer {
   textColorHover: string;
   address: string;
   information: string;
-  bgFooter: BgHeader;
+  bgFooter: BgFooter;
   bgFooterWap: BgHeader;
   link: FooterLink[];
   support: FooterLink[];

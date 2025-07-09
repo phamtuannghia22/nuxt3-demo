@@ -1,6 +1,6 @@
 <script setup>
   import { ref } from "vue";
-  import iconClose from "@images/icon-close-cirlce.svg";
+  import closeIcon from "@images/close-circle-icon.svg";
 
   const showModal = ref(false);
   const showContent = ref(false);
@@ -67,7 +67,7 @@
             class="top-1 right-1 absolute"
           >
             <NuxtImg
-              :src="iconClose"
+              :src="closeIcon"
               width="24"
               height="24"
               alt="icon-close-cirlce.svg"
