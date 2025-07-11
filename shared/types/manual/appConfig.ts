@@ -100,7 +100,7 @@ export interface Footer {
   address: string;
   information: string;
   bgFooter: BgFooter;
-  bgFooterWap: BgHeader;
+  bgFooterWap: BgFooter;
   link: FooterLink[];
   support: FooterLink[];
   Social: FooterSocial[];
