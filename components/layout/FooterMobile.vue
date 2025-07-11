@@ -81,19 +81,16 @@
               :src="social?.icon?.url"
               densities="1"
             />
-            <span
-              class="text-[14px] text-orange leading-[20px] hover:underline cursor-pointer"
-            >{{ social?.title }}</span
-            >
+            <span class="text-[14px] text-orange leading-[20px] hover:underline cursor-pointer">{{
+              social?.title
+            }}</span>
           </a>
         </li>
       </ul>
     </div>
 
     <div>
-      <div class="font-medium text-[14px] mt-[24px] text-white mb-[16px]">
-        Tải ứng dụng FQA
-      </div>
+      <div class="font-medium text-[14px] mt-[24px] text-white mb-[16px]">Tải ứng dụng FQA</div>
       <div class="flex">
         <client-only>
           <a
