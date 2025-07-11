@@ -28,7 +28,7 @@
         class="absolute right-0 left-0 bottom-0 w-full h-full screen-event-small:hidden"
         loading="lazy"
       />
-      <div class="mx-auto flex justify-between w-[1272px] screen-event-sm:w-[1172px]">
+      <div class="mx-auto flex justify-between w-[1200px] screen-event-sm:w-[1172px]">
         <div class="flex flex-col text-[14px]">
           <div class="mb-[15.54px]">
             <client-only>
@@ -40,13 +40,13 @@
               />
             </client-only>
           </div>
-          <div class="leading-[22px] max-w-[390px] mb-[10px] text-white text-[14px]">
+          <div class="leading-[22px] max-w-[390px] mb-3 text-white text-[14px]">
             {{ uiLayout?.footer?.description }}
           </div>
           <div class="flex flex-col gap-[14px]">
             <span class="flex text-white">
               <img
-                class="w-5 h-5 mr-[5px]"
+                class="w-5 h-5 mr-3"
                 :src="phoneIcon"
                 alt="phone-orange-icon.svg"
               />
@@ -55,7 +55,7 @@
             </span>
             <span class="flex text-white">
               <img
-                class="w-5 h-5 mr-[5px]"
+                class="w-5 h-5 mr-3"
                 :src="emailIcon"
                 alt="email-orange-icon.svg"
               />
@@ -63,7 +63,7 @@
             </span>
             <div class="flex text-white max-w-[390px]">
               <img
-                class="w-5 h-5 mr-[5px]"
+                class="w-5 h-5 mr-3"
                 :src="locationIcon"
                 alt="location-orange-icon.svg"
               />
@@ -167,18 +167,18 @@
         </div>
       </div>
       <div
-        class="border border-[#393B41] my-4 mx-auto flex justify-between w-[1272px] screen-event-sm:w-[1172px]"
+        class="border border-[#393B41] my-4 mx-auto flex justify-between w-[1200px] screen-event-sm:w-[1172px]"
       ></div>
-      <div class="mx-auto w-[1272px] screen-event-sm:w-[1172px]">
+      <div class="mx-auto w-[1200px] screen-event-sm:w-[1172px]">
         <div class="text-white text-[14px] break-words whitespace-pre-wrap mb-[5px]">
           {{ uiLayout?.footer?.information }}
         </div>
         <div class="text-white text-[14px]">{{ uiLayout?.footer?.copyright }}</div>
       </div>
       <div
-        class="border border-[#393B41] my-4 mx-auto flex justify-between w-[1272px] screen-event-sm:w-[1172px]"
+        class="border border-[#393B41] my-4 mx-auto flex justify-between w-[1200px] screen-event-sm:w-[1172px]"
       ></div>
-      <div class="mx-auto flex justify-between w-[1272px] screen-event-sm:w-[1172px]">
+      <div class="mx-auto flex justify-between w-[1200px] screen-event-sm:w-[1172px]">
         <ul class="flex flex-wrap items-center">
           <li class="text-white text-sm font-semibold">Top từ khóa xu hướng:</li>
           <li
