@@ -11,18 +11,17 @@
   // console.log(a.isMobile);
   // console.log(a.os);
   // reactive state
-  const test1 = useTemplateRef('test1');
-  const test2 = useTemplateRef('test2');
+  // const test1 = useTemplateRef('test1');
+  // const test2 = useTemplateRef('test2');
   const { $toast } = useNuxtApp();
   function openPop()  {
-    // $toast.success('toastify success');
-    test1.value?.openModal()
+    $emitter.emit("open-modal", "auth-modal");
   }
   
-  function openPop2()  {
-    test2.value?.openModal()
-  }
-  
+  // function openPop2()  {
+  //   test2.value?.openModal()
+  // }
+  //
   const { $dayjs, $emitter } = useNuxtApp(); 
   
   // lifecycle hooks
@@ -58,23 +57,25 @@
     >
       Mở Modal
     </button>
-    <Modal
-      ref="test1"
-      :is-have-close-btn="true"
-    >
-      <p class="text-lg">Đây là nội dung của modal.</p>
-      <button
-        @click="openPop2()"
-        class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-      >
-        Mở Modal
-      </button>
-    </Modal>
-    <Modal
-      ref="test2"
-      :is-have-close-btn="true"
-    >
-      <p class="text-lg">Đây là nội dung của modal 2.</p>
-    </Modal>
+<!--    <Modal-->
+<!--      ref="test1"-->
+<!--      :is-have-close-btn="true"-->
+<!--    >-->
+<!--      <p class="text-lg">Đây là nội dung của modal.</p>-->
+<!--      <button-->
+<!--        @click="openPop2()"-->
+<!--        class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"-->
+<!--      >-->
+<!--        Mở Modal-->
+<!--      </button>-->
+<!--    </Modal>-->
+<!--    <Modal-->
+<!--      ref="test2"-->
+<!--      :is-have-close-btn="true"-->
+<!--    >-->
+<!--      <p class="text-lg">Đây là nội dung của modal 2.</p>-->
+<!--    </Modal>-->
+    <AuthModal>
+    </AuthModal>
   </div>
 </template>

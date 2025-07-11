@@ -2,9 +2,15 @@
   import { ref } from "vue";
   import closeIcon from "@images/close-circle-icon.svg";
 
+  const { $emitter } = useNuxtApp();
   const showModal = ref(false);
   const showContent = ref(false);
   const props = defineProps({
+    name: {
+      type: String,
+      default: 'modal',
+      required: true,
+    },
     isHaveCloseBtn: {
       type: Boolean,
       default: false,
@@ -32,12 +38,34 @@
       showModal.value = false;
     }, 500);
   }
-
+  
+  function handleCloseModal(modalName) {
+    if (props.name === modalName) {
+      closeModal();
+    }
+  }
+  
+  function handleOpenModal(modalName) {
+    if (props.name === modalName) {
+      openModal();
+    }
+  }
+  
   function handleClickToClose() {
     if (props.clickToClose) {
       closeModal();
     }
   }
+
+  onMounted(() => {
+    $emitter.on('open-modal', handleOpenModal);
+    $emitter.on('close-modal', handleCloseModal);
+  });
+
+  onUnmounted(() => {
+    $emitter.off('open-modal', handleOpenModal);
+    $emitter.off('close-modal', handleCloseModal);
+  })
 
   defineEmits(["close"]);
   defineExpose({
@@ -57,7 +85,7 @@
         <div
           v-if="showContent"
           @click.stop="() => true"
-          class="bg-white rounded-lg p-6 phone:px-3 phone:pb-3 phone:pt-6 min-w-[360px] shadow-2xl relative"
+          class="bg-white rounded-lg pt-6 min-w-[360px] shadow-2xl relative"
           :class="`${classes}`"
         >
           <slot />

@@ -20,6 +20,7 @@ export default defineConfig({
       orangeBland: "#fff3ed",
       grayBland: "#DEDEDE",
       redError: "#FF2121",
+      lightGray: "#FAFAFA",
     },
   },
   presets: [presetWind3()],
