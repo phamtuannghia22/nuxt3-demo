@@ -1,15 +1,21 @@
 <script setup lang="ts">
-  import Footer from "~/components/layout/Footer.vue";
+  import { defineAsyncComponent } from "vue";
+
+  const store = useStore();
+  const { isMobile } = store;
+
+  const Footer = defineAsyncComponent(() => import("~/components/layout/Footer.vue"));
+
+  const FooterMobile = defineAsyncComponent(() => import("~/components/layout/FooterMobile.vue"));
 </script>
 
 <template>
   <div>
     <p>Some default layout content shared across all pages</p>
+    
     <slot />
-    <Footer />
+
+    <FooterMobile v-if="isMobile" />
+    <Footer v-else />
   </div>
 </template>
-
-<style scoped>
-
-</style>
