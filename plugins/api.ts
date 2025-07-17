@@ -93,14 +93,13 @@ export default defineNuxtPlugin({
         console.error("Response error:", response);
       },
     });
-    
+
     const qnaFetch = $fetch.create({
       baseURL: `${config.public.qnaUrl}`,
       headers: {
         "Content-Type": "application/json",
       },
-      onRequest({ options }) {
-      },
+      onRequest({ options }) {},
       onResponse({ response }) {},
       onRequestError({ error }) {
         console.error("Request error:", error);

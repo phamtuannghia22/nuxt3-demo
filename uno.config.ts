@@ -21,6 +21,7 @@ export default defineConfig({
       grayBland: "#DEDEDE",
       redError: "#FF2121",
       lightGray: "#FAFAFA",
+      orangeButton: '#FF7F00',
     },
   },
   presets: [presetWind3()],
