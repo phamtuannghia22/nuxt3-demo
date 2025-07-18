@@ -140,10 +140,10 @@
     <div class="form-group">
       <input
         type="checkbox"
-        id="html"
+        id="remember-login-check-box"
         v-model="rememberLogin"
       />
-      <label for="html">Lưu tài khoản</label>
+      <label for="remember-login-check-box">Lưu tài khoản</label>
     </div>
     <button
       type="submit"
