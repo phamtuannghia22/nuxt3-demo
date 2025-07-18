@@ -27,7 +27,7 @@
   // lifecycle hooks
   onMounted(() => {
     console.log(import.meta.dev);
-    
+    console.log(toRaw(a.userInfo));
     console.log(toRaw(a.appConfig));
     const time = $dayjs().subtract(2, 'day').format('YYYY-MM-DD');
     console.log(time);

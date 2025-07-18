@@ -1,9 +1,11 @@
 <script setup lang="ts">
   import SocialLogin from "~/components/auth/SocialLogin.vue";
   import Login from "~/components/auth/Login.vue";
+  import Register from "~/components/auth/Register.vue";
 
   const runtimeConfig = useRuntimeConfig();
   const isLogin = ref(true);
+  const authScreen = ref<"login" | "register" | "forgot">("register");
 </script>
 
 <template>
@@ -11,7 +13,10 @@
     :is-have-close-btn="true"
     name="auth-modal"
   >
-    <div v-show="isLogin" class="w-[414px]">
+    <div
+      v-show="authScreen === 'login'"
+      class="w-[414px]"
+    >
       <p class="text-center text-[32px] mb-5 font-semibold">Đăng nhập</p>
       <div class="p-3">
         <Login class="mb-6" />
@@ -26,6 +31,15 @@
           Bạn chưa có tài khoản?
           <button class="text-orange underline">Đăng ký ngay</button>
         </p>
+      </div>
+    </div>
+    <div
+      v-show="authScreen === 'register'"
+      class="w-[414px]"
+    >
+      <p class="text-center text-[32px] mb-5 font-semibold">Đăng ký tài khoản</p>
+      <div class="p-3">
+        <Register />
       </div>
     </div>
   </Modal>

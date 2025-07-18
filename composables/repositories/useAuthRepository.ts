@@ -1,4 +1,5 @@
 import type { AuthToken, FQAResponse } from "@manual-types/fqaRes";
+import type { RegisterPayload } from "@manual-types/fqaPayload";
 import { useStore } from "~/stores";
 
 const generateParams = (params: object) => {
@@ -53,6 +54,23 @@ export function useAuthRepository() {
         {
           method: "POST",
           body: token,
+        },
+      );
+    },
+    registerAuthen: (payload: RegisterPayload): Promise<FQAResponse<AuthToken>> => {
+      const { utm_source, utm_campaign, utm_medium, is_first } = payload;
+      return $authFetch(
+        `/auth/register?${generateParams({
+          utm_source,
+          utm_campaign,
+          utm_medium,
+          is_first,
+          app_type: store.isMobile ? 3 : 1,
+          os_type: getOSType(store.os),
+        })}`,
+        {
+          method: "POST",
+          body: payload,
         },
       );
     },
