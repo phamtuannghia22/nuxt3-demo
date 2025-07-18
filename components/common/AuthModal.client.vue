@@ -10,9 +10,8 @@
   <Modal
     :is-have-close-btn="true"
     name="auth-modal"
-    classes="w-[414px]"
   >
-    <div v-show="isLogin">
+    <div v-show="isLogin" class="w-[414px]">
       <p class="text-center text-[32px] mb-5 font-semibold">Đăng nhập</p>
       <div class="p-3">
         <Login class="mb-6" />

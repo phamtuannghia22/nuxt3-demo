@@ -21,7 +21,7 @@ const getOSType = (os: string) => {
   return 4;
 };
 
-export function useAuthRepository () {
+export function useAuthRepository() {
   const { $authFetch } = useNuxtApp();
   const store: StoreType = useStore();
   return {
@@ -36,6 +36,23 @@ export function useAuthRepository () {
         {
           method: "POST",
           body: payload,
+        },
+      );
+    },
+    loginThirdAuthen: (token: any, payload: any): Promise<FQAResponse<AuthToken>> => {
+      const { utm_source, utm_campaign, utm_medium, is_first } = payload;
+      return $authFetch(
+        `/auth/login/firebase?${generateParams({
+          utm_source,
+          utm_campaign,
+          utm_medium,
+          is_first,
+          app_type: store.isMobile ? 3 : 1,
+          os_type: getOSType(store.os),
+        })}`,
+        {
+          method: "POST",
+          body: token,
         },
       );
     },

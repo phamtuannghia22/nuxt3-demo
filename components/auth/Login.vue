@@ -86,7 +86,7 @@
         }
         $emitter.emit("close-modal", "auth-modal");
       } else {
-        $toast.error("Hệ thống đang bảo trì");
+        throw new Error();
       }
     } catch (e) {
       useLogError(e);

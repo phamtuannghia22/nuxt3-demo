@@ -7,6 +7,6 @@ export default function (error: any) {
   if (resError?.msg?.spec) {
     $toast.error(resError?.msg?.spec);
   } else {
-    $toast.error("Hệ thống đang bảo trì");
+    $toast.error(error?.message || "Hệ thống đang bảo trì");
   }
 }

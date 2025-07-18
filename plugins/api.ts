@@ -26,7 +26,7 @@ export default defineNuxtPlugin({
       onResponse({ response }) {
         if (response.url.includes("auth/login")) {
           const res = response._data as FQAResponse<AuthToken>;
-          if (res.msg.status === "success" && res.msg.code === "2000") {
+          if (res?.msg?.status === "success" && res?.msg?.code === "2000") {
             auth_cookie.value = JSON.stringify(res.data);
             state.setLoggedIn(true);
           }

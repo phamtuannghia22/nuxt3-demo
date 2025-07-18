@@ -20,6 +20,13 @@ export default defineNuxtConfig({
       redisHost: "",
       redisPass: "",
       fqaUrlCdn: "",
+      firebaseApiKey: "",
+      firebaseAuthDomain: "",
+      firebaseProjectId: "",
+      firebaseStorrageBucket: "",
+      firebaseMessagingSenderId: "",
+      firebaseAppId: "",
+      firebaseMeasurementId: "",
     },
   },
   imports: {
