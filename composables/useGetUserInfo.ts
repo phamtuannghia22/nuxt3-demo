@@ -7,7 +7,6 @@ export default async function() {
   const token: AuthToken = JSON.parse(JSON.stringify(auth_cookie.value || ""));
   if (token?.access_token) {
     try {
-      console.log('ngu');
       const res = await useUserRepository().userInfo();
       if (res.msg.status === "success" && res.msg.code === "2000") {
         state.setUserInfo(res.data);
