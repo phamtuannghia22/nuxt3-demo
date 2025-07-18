@@ -100,6 +100,7 @@
           if (resultData?.msg?.status === "success" && resultData?.msg?.code === "2000") {
             $toast.success("Đăng nhập thành công");
             $emitter.emit("close-modal", "auth-modal");
+            await useGetUserInfo();
           } else {
             throw new Error();
           }

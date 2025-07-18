@@ -7,7 +7,7 @@ export default defineNuxtPlugin({
   setup() {
     const config = useRuntimeConfig();
     const state = useStore();
-    const auth_cookie = useCookie("fqa_auth", {
+    const auth_cookie = useCookie<AuthToken|null>("fqa_auth", {
       expires: new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 365),
       path: "/",
       sameSite: "lax",
@@ -27,7 +27,7 @@ export default defineNuxtPlugin({
         if (response.url.includes("auth/login")) {
           const res = response._data as FQAResponse<AuthToken>;
           if (res?.msg?.status === "success" && res?.msg?.code === "2000") {
-            auth_cookie.value = JSON.stringify(res.data);
+            auth_cookie.value = res.data;
             state.setLoggedIn(true);
           }
         }
@@ -69,7 +69,7 @@ export default defineNuxtPlugin({
                 },
               );
               if (resRefreshToken.msg.status === "success" && resRefreshToken.msg.code === "2000") {
-                auth_cookie.value = JSON.stringify(resRefreshToken.data);
+                auth_cookie.value = resRefreshToken.data
                 if (!resRefreshToken.data?.access_token) {
                   return;
                 }
@@ -116,7 +116,7 @@ export default defineNuxtPlugin({
                 },
               );
               if (resRefreshToken.msg.status === "success" && resRefreshToken.msg.code === "2000") {
-                auth_cookie.value = JSON.stringify(resRefreshToken.data);
+                auth_cookie.value = resRefreshToken.data
                 if (!resRefreshToken.data?.access_token) {
                   return;
                 }

@@ -84,6 +84,7 @@
           localStorage.setItem("rememberLogin", "false");
           localStorage.setItem("userAccount", "");
         }
+        useGetUserInfo();
         $emitter.emit("close-modal", "auth-modal");
       } else {
         throw new Error();
